@@ -6,8 +6,9 @@
 		    "paths": {
 		      "@assets/*":["./src/assets/*"],
 		      "@components/*":["./src/components/*"],
-		      "@routes/*":["./src/routes/*"],
 		      "@db/*":["./src/db/*"],
+		      "@routes/*":["./src/routes/*"],
+		      "@screens/*":["./src/screens/*"],
 		      "@theme/*":["./src/theme/*"] ,
 		      "@utils/*":["./src/utils/*"] ,
 		    }	

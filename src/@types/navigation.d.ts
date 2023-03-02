@@ -1,10 +1,18 @@
+import { Meal, MealStatistics } from '@utils/entities'
+
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
-      groups: undefined;
-      new: undefined;
-      players: {
-        group: string;
+      home: undefined
+      editMeal: {
+        meal: Meal
+      }
+      mealDetail: {
+        meal: Meal
+      }
+      newMeal: undefined
+      statistics: {
+        mealStatistics: MealStatistics
       }
     }
   }
