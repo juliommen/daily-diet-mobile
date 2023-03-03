@@ -3,6 +3,7 @@ export type Meal = {
   description: string
   date: string
   hour: string
+  type: 'in' | 'out'
 }
 
 export type MealStatistics = {

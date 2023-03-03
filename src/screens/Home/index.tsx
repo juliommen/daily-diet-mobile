@@ -11,6 +11,16 @@ export function Home() {
   function handleNewMeal() {
     navigate('newMeal')
   }
+  function handleDetailMeal() {
+    navigate('mealDetail', {
+      name: 'Lasanha a Bolognesa',
+      description: 'Lasanha com molho de tomate, queijo, presunto.',
+      date: '03/03/2023',
+      hour: '12:60',
+      type: 'out',
+    })
+  }
+
   return (
     <Container>
       <Logo source={logo} alt="" />
@@ -27,6 +37,7 @@ export function Home() {
           color="GREEN"
           title="Ahudhf auhfudh auhfudh a huh"
           hour="20:00"
+          onPress={handleDetailMeal}
         />
       </ScrollView>
 

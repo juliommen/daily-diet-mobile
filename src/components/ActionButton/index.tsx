@@ -2,7 +2,7 @@ import { Container, Icon, Title } from './style'
 import { TouchableOpacityProps } from 'react-native'
 
 type ActionButtonProps = TouchableOpacityProps & {
-  nameIcon?: 'trash2' | 'plus' | 'edit3'
+  nameIcon?: 'trash-2' | 'plus' | 'edit-3'
   title: string
   type?: 'PRIMARY' | 'SECONDARY'
 }

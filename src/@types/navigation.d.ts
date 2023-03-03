@@ -1,15 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { Meal, MealStatistics } from '@utils/entities'
 
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
       home: undefined
-      editMeal: {
-        meal: Meal
-      }
-      mealDetail: {
-        meal: Meal
-      }
+      editMeal: Meal
+      mealDetail: Meal
       newMeal: undefined
       statistics: {
         mealStatistics: MealStatistics

@@ -1,3 +1,10 @@
 import styled from 'styled-components/native'
 
-export const Container = styled.SafeAreaView``
+type CardProps = {
+  type: 'in' | 'out'
+  active: boolean
+}
+
+export const Card = styled.TouchableOpacity<CardProps>``
+export const Indicator = styled.View<CardProps>``
+export const Label = styled.Text``

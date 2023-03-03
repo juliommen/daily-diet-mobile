@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled, { css } from 'styled-components/native'
 import { Feather } from '@expo/vector-icons'
 
 type Props = {
@@ -12,21 +12,42 @@ export const Container = styled.TouchableOpacity<Props>`
   justify-content: center;
   border-radius: 6px;
   padding: 16px;
-  background-color: ${({ theme, type }) =>
-    type === 'PRIMARY' ? theme.COLORS.gray1 : theme.COLORS.gray7};
+
   margin: 10px 0;
+
+  ${({ theme, type }) => {
+    if (type === 'PRIMARY') {
+      return css`
+        background-color: ${theme.COLORS.gray2};
+        border-color: ${theme.COLORS.gray2};
+        border-width: 1px;
+      `
+    } else {
+      return css`
+        background-color: ${theme.COLORS.gray7};
+        border-color: ${theme.COLORS.gray1};
+        border-width: 1px;
+      `
+    }
+  }};
 `
 
 export const Icon = styled(Feather).attrs<Props>(({ theme, type }) => ({
   color: type === 'PRIMARY' ? theme.COLORS.white : theme.COLORS.gray1,
   size: 18,
 }))`
-  margin-right: 10px;
+  margin-right: 16px;
 `
 
 export const Title = styled.Text<Props>`
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
-  color: ${({ theme, type }) =>
-    type === 'PRIMARY' ? theme.COLORS.white : theme.COLORS.gray1};
+  ${({ theme, type }) =>
+    type === 'PRIMARY'
+      ? css`
+          color: ${theme.COLORS.white};
+        `
+      : css`
+          color: ${theme.COLORS.gray1};
+        `};
   font-size: 14px;
 `
