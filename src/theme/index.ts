@@ -11,7 +11,7 @@ export default {
     gray3: '#5C6265',
     gray4: '#B9BBBC',
     gray5: '#DDDEDF',
-    gray6: '#DDDEDF',
+    gray6: '#EFF0F0',
     gray7: '#FAFAFA',
     white: '#FFF',
   },

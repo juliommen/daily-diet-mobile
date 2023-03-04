@@ -4,9 +4,9 @@ import { useNavigation } from '@react-navigation/native'
 import { Form } from './style'
 
 export function EditMeal() {
-  const { navigate } = useNavigation()
+  const { goBack } = useNavigation()
   function handleBackPage() {
-    navigate('home')
+    goBack()
   }
   return (
     <ScreenScaffold title="Editar refeição" onBack={handleBackPage}>

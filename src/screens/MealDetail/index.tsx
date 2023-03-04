@@ -1,8 +1,10 @@
 import { ActionButton } from '@components/ActionButton'
 import { ScreenScaffold } from '@components/ScreenScaffold'
+import { removeMeal } from '@db/AsyncStorage/useCases/removeMeal'
 import { useNavigation, useRoute } from '@react-navigation/native'
+import { formatDateIsoToPt } from '@utils/dates'
 import { Meal } from '@utils/entities'
-import { View } from 'react-native'
+import { Alert, View } from 'react-native'
 import {
   DateTime,
   DateTimeLabel,
@@ -26,7 +28,19 @@ export function MealDetail() {
   }
 
   function handleRemoveMeal() {
-    navigate('home')
+    Alert.alert('Exclusão', 'Tem certeza que quer excluir esta refeição?', [
+      {
+        text: 'Não',
+        style: 'cancel',
+      },
+      {
+        text: 'Sim',
+        onPress: async () => {
+          await removeMeal(meal)
+          navigate('home')
+        },
+      },
+    ])
   }
 
   return (
@@ -39,7 +53,7 @@ export function MealDetail() {
         <Name>{meal.name}</Name>
         <Description>{meal.description}</Description>
         <DateTimeLabel>Data e hora</DateTimeLabel>
-        <DateTime>{meal.date + ' às ' + meal.hour}</DateTime>
+        <DateTime>{formatDateIsoToPt(meal.date) + ' às ' + meal.hour}</DateTime>
         <Tag>
           <Indicator type={meal.type}></Indicator>
           <IndicatorText>

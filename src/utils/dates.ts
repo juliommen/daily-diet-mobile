@@ -4,6 +4,12 @@ export function formatDatePtToIso(date: string) {
   return dateFormatted
 }
 
+export function formatDateIsoToPt(date: string) {
+  const dateArray = date.split('-')
+  const dateFormatted = dateArray[2] + '/' + dateArray[1] + '/' + dateArray[0]
+  return dateFormatted
+}
+
 export function isDateValid(date: string) {
   const dateformat = /^(0?[1-9]|[1-2][0-9]|3[01])[/](0?[1-9]|1[0-2])/
 
@@ -56,10 +62,4 @@ export function isTimeValid(time: string) {
   }
 
   return true
-}
-
-export function formatTimeToMinutes(time: string) {
-  const [hour, minutes] = time.split(':').map((v) => Number(v))
-  const totalMinutes = hour * 60 + minutes
-  return totalMinutes
 }

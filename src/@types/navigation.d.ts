@@ -8,9 +8,7 @@ export declare global {
       editMeal: Meal
       mealDetail: Meal
       newMeal: undefined
-      statistics: {
-        mealStatistics: MealStatistics
-      }
+      statistics: MealStatistics
     }
   }
 }

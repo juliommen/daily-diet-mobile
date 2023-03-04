@@ -3,23 +3,28 @@ import { TouchableOpacity } from 'react-native'
 
 type InfoCardProps = {
   color?: 'RED' | 'GREEN'
-  text?: string
-  number?: string
+  text: string
+  number: string
   hasIcon?: boolean
+  onPress?: () => void
 }
 
 export function InfoCard({
-  color = 'GREEN',
-  number = '30,21%',
-  text = 'das refeições dentro da dieta',
-  hasIcon = true,
+  color,
+  number,
+  text,
+  hasIcon = false,
+  onPress,
 }: InfoCardProps) {
   return (
     <Container color={color}>
       <Number>{number}</Number>
       <Text>{text}</Text>
       {hasIcon && (
-        <TouchableOpacity style={{ position: 'absolute', top: 6, right: 6 }}>
+        <TouchableOpacity
+          onPress={onPress}
+          style={{ position: 'absolute', top: 6, right: 6 }}
+        >
           <ButtonIcon color={color} name="arrow-up-right"></ButtonIcon>
         </TouchableOpacity>
       )}

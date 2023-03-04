@@ -2,14 +2,18 @@ import styled, { css } from 'styled-components/native'
 import { Feather } from '@expo/vector-icons'
 
 type ContainerProps = {
-  color: 'RED' | 'GREEN'
+  color?: 'RED' | 'GREEN'
 }
 
 export const Container = styled.View<ContainerProps>`
   border-radius: 8px;
   padding: 20px 16px;
   background-color: ${({ theme, color }) =>
-    color === 'RED' ? theme.COLORS.redLight : theme.COLORS.greenLight};
+    !color
+      ? theme.COLORS.gray5
+      : color === 'RED'
+      ? theme.COLORS.redLight
+      : theme.COLORS.greenLight};
   align-items: center;
   width: 100%;
   margin: 10px 0;

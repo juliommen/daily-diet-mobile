@@ -1,5 +1,5 @@
-import { TouchableOpacityProps, View } from 'react-native'
-import { Card, Indicator, Label, SelectionLabel } from './style'
+import { TouchableOpacityProps } from 'react-native'
+import { Card, Indicator, Label } from './style'
 
 type SelectionCardProps = TouchableOpacityProps & {
   selectionType: 'in' | 'out'
@@ -13,7 +13,7 @@ export function SelectionCard({
 }: SelectionCardProps) {
   return (
     <Card type={selectionType} active={isSelected} {...rest}>
-      <Indicator type={selectionType} active={isSelected} />
+      <Indicator type={selectionType} />
       <Label>{selectionType === 'in' ? 'Sim' : 'Não'}</Label>
     </Card>
   )
